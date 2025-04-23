@@ -1,0 +1,44 @@
+interface Vehicle {
+    void start();
+    void stop();
+    void fuelType();
+    void displayModel();
+}
+
+class Bike implements Vehicle {
+    String model;
+
+    Bike(String model) {
+        this.model = model;
+    }
+
+    @Override
+    public void start() {
+        System.out.println(model + " bike is starting...");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println(model + " bike is stopping...");
+    }
+
+    @Override
+    public void fuelType() {
+        System.out.println(model + " uses petrol.");
+    }
+
+    @Override
+    public void displayModel() {
+        System.out.println("Bike model: " + model);
+    }
+}
+
+public class VehicleInterfaceDemo {
+    public static void main(String[] args) {
+        Vehicle myBike = new Bike("Yamaha R15");
+        myBike.displayModel();
+        myBike.start();
+        myBike.stop();
+        myBike.fuelType();
+    }
+}
