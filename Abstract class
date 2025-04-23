@@ -1,0 +1,47 @@
+abstract class Vehicle {
+    String model;
+
+    Vehicle(String model) {
+        this.model = model;
+    }
+
+    void displayModel() {
+        System.out.println("Vehicle model: " + model);
+    }
+
+    abstract void start();
+    abstract void stop();
+    abstract void fuelType();
+}
+
+class Car extends Vehicle {
+
+    Car(String model) {
+        super(model);
+    }
+
+    @Override
+    void start() {
+        System.out.println(model + " car is starting...");
+    }
+
+    @Override
+    void stop() {
+        System.out.println(model + " car is stopping...");
+    }
+
+    @Override
+    void fuelType() {
+        System.out.println(model + " uses petrol.");
+    }
+}
+
+public class VehicleDemo {
+    public static void main(String[] args) {
+        Vehicle myCar = new Car("Honda City");
+        myCar.displayModel();
+        myCar.start();
+        myCar.stop();
+        myCar.fuelType();
+    }
+}
